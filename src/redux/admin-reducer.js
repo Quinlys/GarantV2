@@ -19,7 +19,6 @@ let initialState = {
 
 export const adminReducer = (state = initialState, action) => {
 
-    debugger;
     switch(action.type) {
         case ADD_IMG_INPUTS_FIELDS:
             state.imgInputsFields++;
