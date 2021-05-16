@@ -1,0 +1,36 @@
+.product {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.img-icon {
+    float: right;
+    width: 60px;
+}
+
+.description {
+    min-height: 50px;
+}
+
+a {
+    color: #222222;
+    text-decoration: none
+}
+
+a:hover {
+    color: #222222;
+    text-decoration: none
+}
+
+.figure {
+    width: 100%; /* Ширина области */
+    height: 240px; /* Высота области */
+    margin: 0; /* Обнуляем отступы */
+}
+
+.card-img-top {
+    width: 100%; /* Ширина изображений */
+    height: 100%; /* Высота изображении */
+    object-fit: cover; /* Вписываем фотографию в область */
+
+}

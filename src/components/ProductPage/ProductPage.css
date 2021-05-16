@@ -1,0 +1,21 @@
+body {
+    color: #3c3d41;
+}
+
+.carouselItem {
+    max-height: 320px;
+
+}
+
+.carouselPhoto {
+    min-height: 320px;
+    background-size: cover;
+}
+
+.info-block {
+    margin: 40px 0;
+}
+
+.button {
+
+}

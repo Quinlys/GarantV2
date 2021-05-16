@@ -1,0 +1,16 @@
+
+.hidden {
+    display: block;
+}
+.mobileIcon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .mobileIcon {
+        display: block;
+    }
+    .hidden {
+        display: none;
+    }
+}
