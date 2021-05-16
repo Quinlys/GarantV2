@@ -13,7 +13,7 @@ const Admin = (props) => {
                     <Button className='call bg-success border-0 button'>Додати новий будинок</Button>
                 </Link>
             </div>
-            <ProductList state={props.state}/>
+            <ProductList data={props.store.getState().userReducer.data}/>
         </div>
     )
 };

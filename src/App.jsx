@@ -6,9 +6,9 @@ import MainPage from "./components/MainPage/MainPage";
 import {BrowserRouter, Route} from "react-router-dom";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Admin from "./components/Admin/Admin";
-import Add from "./components/Admin/Add/Add";
 import SuccessPage from "./components/successPage/successPage";
 import ErrorPage from "./components/errorPage/errorPage";
+import AddContainer from "./components/Admin/Add/AddContainer";
 
 
 
@@ -29,10 +29,10 @@ function App(props) {
                   products
               }
               <Route exact path='/admin'>
-                  <Admin state={props.store.getState().userReducer.data}/>
+                  <Admin store={props.store}/>
               </Route>
               <Route path='/admin/add'>
-                  <Add state={props.store.getState().adminReducer} dispatch={props.dispatch}/>
+                  <AddContainer store={props.store}/>
               </Route>
               <Route path='/successPage'>
                   <SuccessPage/>
