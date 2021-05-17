@@ -1,4 +1,3 @@
-import React from 'react'
 import Add from "./Add";
 import {
     addImgInputsFieldsActionCreator,
@@ -6,40 +5,37 @@ import {
     changeTypeOfBuildActionCreator,
     changeTypeOfSellActionCreator
 } from "../../../redux/admin-reducer";
+import {connect} from "react-redux";
 
-const AddContainer = (props) => {
-
-    let state = props.store.getState().adminReducer;
-
-    const changeTypeOfSell = (info) => {
-        props.store.dispatch(changeTypeOfSellActionCreator(info))
-
-    };
-    const changeTypeOfBuild = (info) => {
-        props.store.dispatch(changeTypeOfBuildActionCreator(info))
-    };
-    const changeCountOfRooms = (info) => {
-        props.store.dispatch(changeCountOfRoomsActionCreator(info))
-    };
-    const addImgInputsFields = () => {
-        props.store.dispatch(addImgInputsFieldsActionCreator())
-    };
-
-
-
-    return (
-        <Add
-            changeTypeOfSell={changeTypeOfSell}
-            changeTypeOfBuild={changeTypeOfBuild}
-            changeCountOfRooms={changeCountOfRooms}
-            addImgInputsFields={addImgInputsFields}
-            imgInputsFields={state.imgInputsFields}
-            typeSell={state.addItem.typeSell}
-            typeBuild={state.addItem.typeBuild}
-            countRooms={state.addItem.countRooms}
-            dispatch={props.store.dispatch}
-        />
-    )
+const mapStateToProps = (state) => {
+    return {
+        imgInputsFields: state.adminReducer.imgInputsFields,
+        typeSell: state.adminReducer.addItem.typeSell,
+        typeBuild: state.adminReducer.addItem.typeBuild,
+        countRooms: state.adminReducer.addItem.countRooms
+    }
 };
+
+const mapStateToDispatch = (dispatch) => {
+    return {
+        changeTypeOfSell: (info) => {
+            dispatch(changeTypeOfSellActionCreator(info))
+        },
+        changeTypeOfBuild: (info) => {
+            dispatch(changeTypeOfBuildActionCreator(info))
+        },
+        changeCountOfRooms: (info) => {
+            dispatch(changeCountOfRoomsActionCreator(info))
+        },
+        addImgInputsFields: () => {
+            dispatch(addImgInputsFieldsActionCreator())
+        }
+    }
+};
+
+const AddContainer = connect(mapStateToProps, mapStateToDispatch)(Add);
+
+
+
 
 export default AddContainer

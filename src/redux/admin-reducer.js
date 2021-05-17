@@ -19,21 +19,27 @@ let initialState = {
 
 export const adminReducer = (state = initialState, action) => {
 
+    let stateCopy = {...state};
+
     switch(action.type) {
         case ADD_IMG_INPUTS_FIELDS:
-            state.imgInputsFields++;
-            return state;
+            stateCopy.imgInputsFields = state.imgInputsFields;
+            stateCopy.imgInputsFields++;
+            return stateCopy;
         case CHANGE_TYPE_OF_SELL:
-            state.addItem.typeSell = action.info;
-            return state;
+            stateCopy.addItem.typeSell = state.addItem.typeSell;
+            stateCopy.addItem.typeSell = action.info;
+            return stateCopy;
         case CHANGE_TYPE_OF_BUILD:
-            state.addItem.typeBuild = action.info;
-            return state;
+            stateCopy.addItem.typeBuild = state.addItem.typeBuild;
+            stateCopy.addItem.typeBuild = action.info;
+            return stateCopy;
         case CHANGE_COUNT_OF_ROOMS:
-            state.addItem.countRooms = action.info;
-            return state;
+            stateCopy.addItem.countRooms = state.addItem.countRooms;
+            stateCopy.addItem.countRooms = action.info;
+            return stateCopy;
         default:
-            return state;
+            return stateCopy;
 
     }
 };

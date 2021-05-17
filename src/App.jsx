@@ -10,10 +10,6 @@ import SuccessPage from "./components/successPage/successPage";
 import ErrorPage from "./components/errorPage/errorPage";
 import AddContainer from "./components/Admin/Add/AddContainer";
 
-
-
-
-
 function App(props) {
     let products = props.store.getState().userReducer.data
         .map(product => <Route path={'/house' + product.id}><ProductPage type={product.type} price={product.price} address={product.address} description={product.description} longDescription={product.longDescription} img={product.img}/></Route>);
@@ -42,6 +38,7 @@ function App(props) {
               </Route>
               <Footer/>
           </div>
+
       </BrowserRouter>
   );
 }
