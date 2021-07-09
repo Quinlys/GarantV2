@@ -1,13 +1,13 @@
 import React from 'react'
 import CategorySort from "./CategorySort/CategorySort";
 import ProductList from "./ProductsList/ProductList";
-import * as axios from "axios"
+import getUsers from '../../api/api'
 
 const MainPage = (props) => {
-    axios.get('http://34.118.102.195/posts').then(response => {
-        debugger;
-        console.log(response)
+    getUsers().then(response => {
+        console.log(response.data);
     });
+
     return (
         <div>
             <CategorySort/>

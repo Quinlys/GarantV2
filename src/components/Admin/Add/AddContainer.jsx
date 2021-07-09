@@ -35,7 +35,4 @@ const mapStateToDispatch = (dispatch) => {
 
 const AddContainer = connect(mapStateToProps, mapStateToDispatch)(Add);
 
-
-
-
 export default AddContainer

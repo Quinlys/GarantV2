@@ -1,4 +1,4 @@
-
+const CHANGE_HOUSES = 'CHANGE-HOUSES';
 let initialState = {
     data:   [
         {
@@ -42,6 +42,19 @@ let initialState = {
 
 export const userReducer = (state = initialState, action) => {
 
-    return state;
+    let stateCopy = state;
+    
+    switch (action.type) {
+        case CHANGE_HOUSES:
+            stateCopy.data = state.data;
+            stateCopy.data = action.info;
+            return stateCopy;
+        default:
+            return stateCopy;
+    }
 };
+
+
+export const changeHousesList = (text) => ({type: CHANGE_HOUSES, info: text});
+
 

@@ -2,7 +2,7 @@ import Header from './components/Header/Header'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import React from "react";
 import Footer from './components/Footer/Footer'
-import MainPage from "./components/MainPage/MainPage";
+import MainPageContainer from "./components/MainPage/MainPageContainer";
 import {BrowserRouter, Route} from "react-router-dom";
 import ProductPage from "./components/ProductPage/ProductPage";
 import Admin from "./components/Admin/Admin";
@@ -19,7 +19,7 @@ function App(props) {
           <div className="App bg-light">
               <Header/>
               <Route exact path='/'>
-                <MainPage store={props.store}/>
+                <MainPageContainer store={props.store}/>
               </Route>
               {
                   products
