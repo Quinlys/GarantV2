@@ -1,10 +1,11 @@
-import MainPage from './MainPageC'
+import App from './AppC'
 import {connect} from "react-redux";
-import {changeHousesList} from "../../redux/user-reducer";
+import {changeHousesList} from "./redux/user-reducer";
 
 const mapStateToProps = (state) => {
     return {
-        data: state.userReducer.data
+        data: state.userReducer.data,
+        state: state
     }
 };
 
@@ -16,6 +17,6 @@ const mapStateToDispatch = (dispatch) => {
     }
 };
 
-const MainPageContainer = connect(mapStateToProps, mapStateToDispatch)(MainPage);
+const AppContainer = connect(mapStateToProps, mapStateToDispatch)(App);
 
-export default MainPageContainer
+export default AppContainer

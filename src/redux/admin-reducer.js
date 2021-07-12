@@ -3,6 +3,8 @@ const CHANGE_TYPE_OF_BUILD = 'CHANGE-TYPE-OF-BUILD';
 const CHANGE_COUNT_OF_ROOMS = 'CHANGE-COUNT-OF-ROOMS';
 const ADD_IMG_INPUTS_FIELDS = 'ADD-IMG-INPUTS-FIELDS';
 
+
+
 let initialState = {
     imgInputsFields: 1,
     addItem: {

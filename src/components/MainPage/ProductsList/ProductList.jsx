@@ -3,13 +3,16 @@ import Product from "./Product/Product";
 import './ProductList.css'
 
 
+
 const ProductList = (props) => {
 
+    let cards;
+    if (props.data !== undefined) {
+        cards = props.data
+            .map( card => <Product img={card.img[0]} id={card._id} price={card.price} type={card.typeSell} description={card.description} address={card.address}/>
+            );
+    }
 
-
-    let cards = props.data
-        .map( card => <Product img={card.img[0]} id={card.id} price={card.price} type={card.type} description={card.description} address={card.address}/>
-    );
 
 
 

@@ -14,6 +14,7 @@ function App(props) {
     let products = props.store.getState().userReducer.data
         .map(product => <Route path={'/house' + product.id}><ProductPage type={product.type} price={product.price} address={product.address} description={product.description} longDescription={product.longDescription} img={product.img}/></Route>);
 
+    console.log(products);
     return (
       <BrowserRouter>
           <div className="App bg-light">
@@ -28,7 +29,7 @@ function App(props) {
                   <Admin store={props.store}/>
               </Route>
               <Route path='/admin/add'>
-                  <AddContainer store={props.store}/>
+                  <AddContainer/>
               </Route>
               <Route path='/successPage'>
                   <SuccessPage/>

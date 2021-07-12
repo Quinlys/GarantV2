@@ -10,14 +10,15 @@ import {NavLink} from 'react-router-dom'
 const Product = (props) => {
     // let path = "/house" + props.id;
     let typeString, typeImg;
-    if (props.type === 1) {
+    console.log(props);
+    if (props.type === 'Продаж') {
         typeString = 'Продаж';
         typeImg = sell;
-    } else if (props.type === 2) {
+    } else if (props.type === 'Оренда') {
         typeString = 'Оренда';
         typeImg = rent;
 
-    } else if (props.type === 3) {
+    } else if (props.type === 'Обмін') {
         typeString = 'Обмін';
         typeImg = exchange;
 

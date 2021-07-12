@@ -57,9 +57,6 @@ const ProductPage = (props) => {
                     <h4>Опис</h4>
                     <p className="description">
                         <span>
-                            {props.description}
-                        </span>
-                        <span>
                             {props.longDescription}
                         </span>
                     </p>
