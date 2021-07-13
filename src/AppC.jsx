@@ -10,7 +10,7 @@ import SuccessPage from "./components/successPage/successPage";
 import ErrorPage from "./components/errorPage/errorPage";
 import AddContainer from "./components/Admin/Add/AddContainer";
 import getUsers from "./api/api";
-import Login from './components/Admin/Login'
+import LoginContainer from "./components/Admin/LoginContainer";
 
 class App extends React.Component {
 
@@ -55,7 +55,7 @@ class App extends React.Component {
                         <ErrorPage/>
                     </Route>
                     <Route path='/admin/login'>
-                        <Login/>
+                        <LoginContainer/>
                     </Route>
                     <Footer/>
                 </div>

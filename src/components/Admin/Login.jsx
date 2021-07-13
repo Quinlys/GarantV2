@@ -15,14 +15,14 @@ const Login = () => {
             <Form style={{width: '60%', marginRight: 'auto', marginLeft: 'auto', marginTop: '25px', marginBottom: '50px'}} className='justify-content-center'>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Логін</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Control type="email" placeholder="Введіть логін" />
                     <Form.Text className="text-muted">
                     </Form.Text>
                 </Form.Group>
 
                 <Form.Group controlId="formBasicPassword">
-                    <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
+                    <Form.Label>Пароль</Form.Label>
+                    <Form.Control type="password" placeholder="Пароль" />
                 </Form.Group>
 
                 <Button variant="primary" className='bg-success border-0' type="submit" style={{width: '340px'}}>

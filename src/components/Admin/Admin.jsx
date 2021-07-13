@@ -3,9 +3,11 @@ import './Admin.css'
 import {Button} from "react-bootstrap";
 import ProductList from "./ProductsList/ProductList";
 import { Link } from "react-router-dom";
+import Cookies from 'js-cookie'
 
 
 const Admin = (props) => {
+    Cookies.set('test', 'test');
     return (
         <div className="container">
             <div className="row justify-content-center" style={{marginTop: '40px', marginBottom: '40px'}}>
