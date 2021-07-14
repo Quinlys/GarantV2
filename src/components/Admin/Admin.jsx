@@ -7,7 +7,11 @@ import Cookies from 'js-cookie'
 
 
 const Admin = (props) => {
-    Cookies.set('test', 'test');
+    if (Cookies.get('id') === undefined) {
+        document.location.replace('http://localhost:3000/admin/login');
+    }
+
+
     return (
         <div className="container">
             <div className="row justify-content-center" style={{marginTop: '40px', marginBottom: '40px'}}>

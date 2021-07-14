@@ -1,11 +1,7 @@
 import Login from "./Login";
-import {
-    addImgInputsFieldsActionCreator,
-    changeCountOfRoomsActionCreator,
-    changeTypeOfBuildActionCreator,
-    changeTypeOfSellActionCreator
-} from "../../redux/admin-reducer";
 import {connect} from "react-redux";
+import Cookie from 'js-cookie'
+import * as axios from 'axios'
 
 const mapStateToProps = (state) => {
     return {
@@ -13,19 +9,29 @@ const mapStateToProps = (state) => {
     }
 };
 
-const mapStateToDispatch = (dispatch) => {
+const mapStateToDispatch = () => {
     return {
-        changeTypeOfSell: (info) => {
-            dispatch(changeTypeOfSellActionCreator(info))
-        },
-        changeTypeOfBuild: (info) => {
-            dispatch(changeTypeOfBuildActionCreator(info))
-        },
-        changeCountOfRooms: (info) => {
-            dispatch(changeCountOfRoomsActionCreator(info))
-        },
-        addImgInputsFields: () => {
-            dispatch(addImgInputsFieldsActionCreator())
+        addCookieForLogin: (username, password) => {
+            debugger;
+            axios.post('http://34.118.102.195/auth/login', {
+                username: username,
+                password: password
+            })
+                .then(function (response) {
+                    debugger;
+                    if (response.data.token !== undefined) {
+                        Cookie.set('id', response.data.token);
+                        document.location.replace('http://localhost:3000/admin');
+                    } else {
+                        document.location.replace('http://localhost:3000/errorAfterLogin');
+                    }
+                })
+                .catch(function (error) {
+                    debugger;
+                    console.log(error);
+                    document.location.replace('http://localhost:3000/errorAfterLogin');
+                });
+
         }
     }
 };

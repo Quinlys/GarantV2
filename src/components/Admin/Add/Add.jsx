@@ -4,15 +4,9 @@ import {Dropdown, Form, Button} from "react-bootstrap";
 
 const Add = (props) => {
 
-    let imgInputs = [];
-    for (let i = 0; i < props.imgInputsFields; i++) {
-        imgInputs[i] = <Form.Group className="photo" style={{marginTop: '20px'}}><Form.Control type="text" placeholder="Посилання на фото" /></Form.Group>
-    }
-
     let typeSellText = 'Не вибрано';
     let typeBuildText = 'Не вибрано';
     let countOfRoomsText = 'Не вибрано';
-    debugger;
     const onChangeTypeOfSell = (event) => {
         props.changeTypeOfSell(event.target.innerHTML)
     };
@@ -25,6 +19,26 @@ const Add = (props) => {
     const addImgInputsFields = () => {
         props.addImgInputsFields();
     };
+
+    const addHouseToDB = () => {
+        let longDescription = document.getElementById('longDescription').value;
+        let description = document.getElementById('description').value;
+        let price = document.getElementById('price').value;
+        let address = document.getElementById('address').value;
+        let imagesFields = document.getElementsByClassName('imagesField');
+        let images = [];
+        for (let i = 0; i < imagesFields.length; i++) {
+            images.push(imagesFields[i].value)
+        }
+        props.addHouseToDB(images, props.typeSell, props.typeBuild, props.countRooms, longDescription, price, address, description)
+    };
+
+
+
+    let imgInputs = [];
+    for (let i = 0; i < props.imgInputsFields; i++) {
+        imgInputs[i] = <Form.Group className="photo" style={{marginTop: '20px'}}><Form.Control className='imagesField' type="text" placeholder="Посилання на фото" /></Form.Group>
+    }
 
 
 
@@ -87,17 +101,17 @@ const Add = (props) => {
                 </div>
             </div>
             <Form.Group className="address" style={{marginTop: '20px'}}>
-                <Form.Control type="text" placeholder="Адреса" />
+                <Form.Control type="text" placeholder="Адреса" id='address' />
             </Form.Group>
             <Form.Group className="price" style={{marginTop: '20px'}}>
-                <Form.Control type="text" placeholder="Ціна" />
+                <Form.Control type="text" placeholder="Ціна" id='price'/>
             </Form.Group>
             <Form.Group className="description" style={{marginTop: '20px'}}>
-                <Form.Control type="text" placeholder="Короткий опис" />
+                <Form.Control type="text" placeholder="Короткий опис" id='description' />
             </Form.Group>
             <Form.Group className="descriptionLong">
                 <Form.Label>Повний опис</Form.Label>
-                <Form.Control as="textarea" rows={3} />
+                <Form.Control as="textarea" rows={3} id='longDescription' />
             </Form.Group>
             <Button className='addPhoto bg-success' onClick={addImgInputsFields}>Добавити поле для фото</Button>
             <div className="InputsPhoto">
@@ -105,7 +119,7 @@ const Add = (props) => {
                     imgInputs
                 }
             </div>
-            <Button className='addPhoto bg-success'>Добавити будинок в список сайту</Button>
+            <Button className='addPhoto bg-success' onClick={addHouseToDB}>Добавити будинок в список сайту</Button>
 
         </div>
     )

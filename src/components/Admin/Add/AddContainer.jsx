@@ -3,9 +3,14 @@ import {
     addImgInputsFieldsActionCreator,
     changeCountOfRoomsActionCreator,
     changeTypeOfBuildActionCreator,
-    changeTypeOfSellActionCreator
+    changeTypeOfSellActionCreator,
+    // addImg,
+    // addDescription,
+    // addLongDescription
 } from "../../../redux/admin-reducer";
 import {connect} from "react-redux";
+import * as axios from "axios";
+import Cookie from 'js-cookie'
 
 const mapStateToProps = (state) => {
     return {
@@ -29,6 +34,39 @@ const mapStateToDispatch = (dispatch) => {
         },
         addImgInputsFields: () => {
             dispatch(addImgInputsFieldsActionCreator())
+        },
+        // addImg: (info) => {
+        //     dispatch(addImg(info))
+        // },
+        // addLongDescription: (info) => {
+        //     dispatch(addLongDescription(info))
+        // },
+        // addDescription: (info) => {
+        //     dispatch(addDescription(info))
+        // },
+        addHouseToDB:  (img, typeSell, typeBuild, CountRooms, longDescription, price, address, description) => {
+            debugger;
+            const headers = {
+                'Authorization': "Bearer " + Cookie.get('id')
+            };
+            axios.post('http://34.118.102.195/posts', {
+                img: img,
+                typeSell: typeSell,
+                typeBuild: typeBuild,
+                CountRooms: CountRooms,
+                longDescription: longDescription,
+                price: price,
+                address: address,
+                description: description,
+            }, {
+                headers: headers
+            }).then (function (response) {
+                debugger;
+                console.log(response)
+            }).catch( function (error) {
+                debugger;
+                console.log(error)
+            })
         }
     }
 };

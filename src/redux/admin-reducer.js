@@ -3,12 +3,15 @@ const CHANGE_TYPE_OF_BUILD = 'CHANGE-TYPE-OF-BUILD';
 const CHANGE_COUNT_OF_ROOMS = 'CHANGE-COUNT-OF-ROOMS';
 const ADD_IMG_INPUTS_FIELDS = 'ADD-IMG-INPUTS-FIELDS';
 
+// const ADD_IMG = 'ADD-IMG';
+// const ADD_LONG_DESCRIPTION = 'ADD_LONG_DESCRIPTION';
+// const ADD_DESCRIPTION = 'ADD_DESCRIPTION';
+
 
 
 let initialState = {
     imgInputsFields: 1,
     addItem: {
-        id: '',
         img: '',
         typeSell: '',
         typeBuild: '',
@@ -41,13 +44,27 @@ export const adminReducer = (state = initialState, action) => {
             stateCopy.addItem.countRooms = state.addItem.countRooms;
             stateCopy.addItem.countRooms = action.info;
             return stateCopy;
+        // case ADD_IMG:
+        //     stateCopy.addItem.img = state.addItem.img;
+        //     stateCopy.addItem.img = action.img;
+        //     return stateCopy;
+        // case ADD_DESCRIPTION:
+        //     stateCopy.addItem.description = state.addItem.description;
+        //     stateCopy.addItem.description = action.info;
+        //     return stateCopy;
+        // case ADD_LONG_DESCRIPTION:
+        //     stateCopy.addItem.longDescription = state.addItem.longDescription;
+        //     stateCopy.addItem.longDescription = action.info;
+        //     return stateCopy;
         default:
             return stateCopy;
 
     }
 };
 
-
+// export const addImg = (text) => ({type: ADD_IMG});
+// export const addDescription = (text) => ({type: ADD_DESCRIPTION});
+// export const addLongDescription = (text) => ({type: ADD_LONG_DESCRIPTION});
 export const addImgInputsFieldsActionCreator = () => ({type: ADD_IMG_INPUTS_FIELDS});
 export const changeTypeOfSellActionCreator = (text) => ({type: CHANGE_TYPE_OF_SELL, info: text});
 export const changeTypeOfBuildActionCreator = (text) => ({type: CHANGE_TYPE_OF_BUILD, info: text});

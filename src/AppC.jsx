@@ -11,6 +11,7 @@ import ErrorPage from "./components/errorPage/errorPage";
 import AddContainer from "./components/Admin/Add/AddContainer";
 import getUsers from "./api/api";
 import LoginContainer from "./components/Admin/LoginContainer";
+import ErrorPageAfterLogin from "./components/errorPage/errorPageAfterLogin";
 
 class App extends React.Component {
 
@@ -22,13 +23,11 @@ class App extends React.Component {
                 this.props.changeHousesList(response.data);
             });
         }
-        console.log(this.props.store.getState().userReducer.data);
 
 
     }
 
     render() {
-        console.log(this.props.store.getState().userReducer.data);
         let products = this.props.store.getState().userReducer.data
             .map(product => <Route path={'/house' + product._id}><ProductPage type={product.type} price={product.price} address={product.address} description={product.description} longDescription={product.longDescription} img={product.img}/></Route>);
 
@@ -57,6 +56,10 @@ class App extends React.Component {
                     <Route path='/admin/login'>
                         <LoginContainer/>
                     </Route>
+                    <Route path='/errorAfterLogin'>
+                        <ErrorPageAfterLogin/>
+                    </Route>
+
                     <Footer/>
                 </div>
 
