@@ -45,26 +45,26 @@ const Add = (props) => {
     return (
         <div className="container" style={{marginTop: '100px', marginBottom: '100px'}}>
             <div className="row">
-                <div className="col-4 text-center">
+                <div className="col-sm-12 col-md-4 text-center" style={{marginBottom: '15px'}}>
                     <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        <Dropdown.Toggle variant="success" id="dropdown-basic" style={{width: '230px'}}>
                             Виберіть тип збуту
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
+                        <Dropdown.Menu style={{width: '230px'}}>
                             <Dropdown.Item onClick={onChangeTypeOfSell}>Продаж</Dropdown.Item>
                             <Dropdown.Item onClick={onChangeTypeOfSell}>Оренда</Dropdown.Item>
                             <Dropdown.Item onClick={onChangeTypeOfSell}>Обмін</Dropdown.Item>
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
-                <div className="col-4 text-center">
+                <div className="col-sm-12 col-md-4  text-center" style={{marginBottom: '15px'}}>
                     <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        <Dropdown.Toggle variant="success" id="dropdown-basic" style={{width: '230px'}}>
                             Виберіть тип будівлі
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
+                        <Dropdown.Menu style={{width: '230px'}}>
                             <Dropdown.Item onClick={onChangeTypeOfBuild}>Квартира</Dropdown.Item>
                             <Dropdown.Item onClick={onChangeTypeOfBuild}>Дача</Dropdown.Item>
                             <Dropdown.Item onClick={onChangeTypeOfBuild}>Будинок</Dropdown.Item>
@@ -74,13 +74,13 @@ const Add = (props) => {
                         </Dropdown.Menu>
                     </Dropdown>
                 </div>
-                <div className="col-4 text-center">
+                <div className="col-sm-12 col-md-4 text-center" style={{marginBottom: '15px'}}>
                     <Dropdown>
-                        <Dropdown.Toggle variant="success" id="dropdown-basic">
+                        <Dropdown.Toggle variant="success" id="dropdown-basic" style={{width: '230px'}}>
                             Виберіть кількість кімнат
                         </Dropdown.Toggle>
 
-                        <Dropdown.Menu>
+                        <Dropdown.Menu style={{width: '230px'}}>
                             <Dropdown.Item onClick={onChangeCountOfRooms}>1</Dropdown.Item>
                             <Dropdown.Item onClick={onChangeCountOfRooms}>2</Dropdown.Item>
                             <Dropdown.Item onClick={onChangeCountOfRooms}>3</Dropdown.Item>

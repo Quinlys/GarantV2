@@ -17,12 +17,10 @@ const Header = () => {
                         <img src={viber} alt="viber" width="20" height="20"/>
                     </a>
                     <div className={s.hidden}>
-                        <a href="https://www.viber.com/ru/" style={{marginLeft: '-24px', marginRight: '5px'}}>
-                            <img src={viber} alt="viber" width="20" height="20"/>
-                        </a>
-                        +380 66 78 26 312 <br/>
-                        +380 68 10 43 588 <br/>
-                    <div style={{marginLeft: '-18px'}}>Олександр Завируха</div>
+                        <a href="tel:+380667826312 " style={{color: 'white'}}>+380 66 78 26 312</a><br/>
+                        <a href="tel:+380681043588 " style={{color: 'white'}}>+380 68 10 43 588</a><br/>
+                        <br/>
+                    <div style={{marginLeft: '-18px', marginTop: '-20px'}}>Олександр Завируха</div>
                     </div>
                 </span>
             </div>

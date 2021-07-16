@@ -13,7 +13,7 @@ const mapStateToDispatch = () => {
     return {
         addCookieForLogin: (username, password) => {
             debugger;
-            axios.post('http://34.118.102.195/auth/login', {
+            axios.post('https://api.garantbd.pp.ua/auth/login', {
                 username: username,
                 password: password
             })

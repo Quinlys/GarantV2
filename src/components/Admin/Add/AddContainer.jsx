@@ -45,11 +45,11 @@ const mapStateToDispatch = (dispatch) => {
         //     dispatch(addDescription(info))
         // },
         addHouseToDB:  (img, typeSell, typeBuild, CountRooms, longDescription, price, address, description) => {
-            debugger;
             const headers = {
                 'Authorization': "Bearer " + Cookie.get('id')
             };
-            axios.post('http://34.118.102.195/posts', {
+            debugger;
+            axios.post('https://api.garantbd.pp.ua/posts', {
                 img: img,
                 typeSell: typeSell,
                 typeBuild: typeBuild,
@@ -62,10 +62,10 @@ const mapStateToDispatch = (dispatch) => {
                 headers: headers
             }).then (function (response) {
                 debugger;
-                console.log(response)
+                document.location.replace('https://kalush-garant.if.ua/admin')
             }).catch( function (error) {
                 debugger;
-                console.log(error)
+                document.location.replace('https://kalush-garant.if.ua/errorPage')
             })
         }
     }

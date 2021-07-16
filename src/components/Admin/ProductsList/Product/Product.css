@@ -34,3 +34,7 @@ a:hover {
     object-fit: cover; /* Вписываем фотографию в область */
 
 }
+
+.card {
+    cursor: pointer;
+}

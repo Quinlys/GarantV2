@@ -7,9 +7,13 @@ const ProductList = (props) => {
 
 
 
-    let cards = props.data
-        .map( card => <Product img={card.img[0]} id={card.id} price={card.price} type={card.type} description={card.description} address={card.address}/>
-    );
+    let cards = [];
+    if (props.data !== undefined) {
+        for (let i = props.data.length - 1; i >= 0; i--) {
+            cards.push(<Product img={props.data[i].img[0]} id={props.data[i]._id} price={props.data[i].price} type={props.data[i].typeSell} description={props.data[i].description} address={props.data[i].address}/>)
+        }
+
+    }
 
 
 

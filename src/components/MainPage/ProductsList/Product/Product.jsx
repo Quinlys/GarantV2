@@ -3,7 +3,6 @@ import './Product.css'
 import sell from '../../../../img/sell.png'
 import exchange from '../../../../img/exchange.png'
 import rent from '../../../../img/rent.png'
-import {NavLink} from 'react-router-dom'
 
 
 
@@ -20,12 +19,14 @@ const Product = (props) => {
     } else if (props.type === 'Обмін') {
         typeString = 'Обмін';
         typeImg = exchange;
-
     }
 
+    const redirect = () => {
+        document.location.replace(document.location + 'house' + props.id)
+    };
+
     return (
-            <div className="col-lg-4 col-md-6 product">
-                <NavLink to={"/house" + props.id}>
+            <div className="col-lg-4 col-md-6 product" onClick={redirect}>
                 <div className="card">
                     <div className="figure">
                         <img className="card-img-top" src={props.img} alt="Card"/>
@@ -40,7 +41,6 @@ const Product = (props) => {
                         <small className="card-text">{props.address}</small>
                     </div>
                 </div>
-                </NavLink>
             </div>
     )
 };
