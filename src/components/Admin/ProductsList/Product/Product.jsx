@@ -25,7 +25,7 @@ const Product = (props) => {
 
             headers: headers
         }).then (function (response) {
-            document.location.replace('http://localhost:3000/admin');
+            document.location.replace('/admin');
             console.log(response)
         }).catch( function (error) {
 
@@ -34,7 +34,7 @@ const Product = (props) => {
     };
 
     const redirect = () => {
-        document.location.replace('http://localhost:3000/house' + props.id)
+        document.location.replace('/house' + props.id)
     };
 
     return (

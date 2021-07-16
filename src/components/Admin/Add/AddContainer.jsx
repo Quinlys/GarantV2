@@ -62,10 +62,10 @@ const mapStateToDispatch = (dispatch) => {
                 headers: headers
             }).then (function (response) {
                 debugger;
-                document.location.replace('https://kalush-garant.if.ua/admin')
+                document.location.replace('/admin')
             }).catch( function (error) {
                 debugger;
-                document.location.replace('https://kalush-garant.if.ua/errorPage')
+                document.location.replace('/errorPage')
             })
         }
     }

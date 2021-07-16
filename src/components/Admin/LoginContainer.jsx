@@ -21,15 +21,15 @@ const mapStateToDispatch = () => {
                     debugger;
                     if (response.data.token !== undefined) {
                         Cookie.set('id', response.data.token);
-                        document.location.replace('http://localhost:3000/admin');
+                        document.location.replace('/admin');
                     } else {
-                        document.location.replace('http://localhost:3000/errorAfterLogin');
+                        document.location.replace('/errorAfterLogin');
                     }
                 })
                 .catch(function (error) {
                     debugger;
                     console.log(error);
-                    document.location.replace('http://localhost:3000/errorAfterLogin');
+                    document.location.replace('/errorAfterLogin');
                 });
 
         }

@@ -8,7 +8,7 @@ import Cookies from 'js-cookie'
 
 const Admin = (props) => {
     if (Cookies.get('id') === undefined) {
-        document.location.replace('http://localhost:3000/admin/login');
+        document.location.replace('/admin/login');
     }
 
 
