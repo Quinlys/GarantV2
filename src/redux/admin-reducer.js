@@ -62,9 +62,6 @@ export const adminReducer = (state = initialState, action) => {
     }
 };
 
-// export const addImg = (text) => ({type: ADD_IMG});
-// export const addDescription = (text) => ({type: ADD_DESCRIPTION});
-// export const addLongDescription = (text) => ({type: ADD_LONG_DESCRIPTION});
 export const addImgInputsFieldsActionCreator = () => ({type: ADD_IMG_INPUTS_FIELDS});
 export const changeTypeOfSellActionCreator = (text) => ({type: CHANGE_TYPE_OF_SELL, info: text});
 export const changeTypeOfBuildActionCreator = (text) => ({type: CHANGE_TYPE_OF_BUILD, info: text});

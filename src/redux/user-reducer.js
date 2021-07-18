@@ -20,19 +20,19 @@ const CHANGE_SORT_LIST = 'CHANGE-SORT-LIST';
 
 let initialState = {
     sortList: {
-        apartments: 'false',
-        cottage: 'false',
-        houses: 'false',
-        garages: 'false',
-        land: 'false',
-        commercial: 'false',
-        oneRoom: 'false',
-        twoRooms: 'false',
-        threeRooms: 'false',
-        fourPlusRooms: 'false',
-        rent: 'false',
-        selling: 'false',
-        exchange: 'false',
+        apartments: false,
+        cottage: false,
+        houses: false,
+        garages: false,
+        land: false,
+        commercial: false,
+        oneRoom: false,
+        twoRooms: false,
+        threeRooms: false,
+        fourPlusRooms: false,
+        rent: false,
+        selling: false,
+        exchange: false,
     },
     data:   [
 
@@ -41,12 +41,12 @@ let initialState = {
 
 export const userReducer = (state = initialState, action) => {
 
-    let stateCopy = state;
+    let stateCopy = {...state};
     
     switch (action.type) {
         case CHANGE_SORT_LIST:
             stateCopy.sortList = state.sortList;
-            stateCopy.sortList = state.info;
+            stateCopy.sortList = action.info;
             return stateCopy;
         case CHANGE_HOUSES:
             stateCopy.data = state.data;

@@ -30,7 +30,6 @@ class App extends React.Component {
     render() {
         let products = this.props.store.getState().userReducer.data
             .map(product => <Route path={'/house' + product._id}><ProductPage type={product.type} price={product.price} address={product.address} description={product.description} longDescription={product.longDescription} img={product.img}/></Route>);
-
         return (
             <BrowserRouter>
                 <div className="App bg-light">

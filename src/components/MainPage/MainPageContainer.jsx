@@ -4,7 +4,8 @@ import {changeHousesList} from "../../redux/user-reducer";
 
 const mapStateToProps = (state) => {
     return {
-        data: state.userReducer.data
+        data: state.userReducer.data,
+        sortList: state.userReducer.sortList
     }
 };
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import getUsers from "../../api/api";
-import CategorySort from './CategorySort/CategorySort';
+import CategorySortContainer from './CategorySort/CategorySortContainer';
 import ProductList from "./ProductsList/ProductList";
 
 
@@ -13,9 +13,6 @@ class MainPage extends React.Component {
                 this.props.changeHousesList(response.data);
             });
         }
-        console.log(this.props);
-
-
     }
 
 
@@ -23,9 +20,9 @@ class MainPage extends React.Component {
     render() {
         return (
             <div>
-                <CategorySort/>
+                <CategorySortContainer/>
 
-                <ProductList data={this.props.data}/>
+                <ProductList data={this.props.data} sortList={this.props.sortList}/>
             </div>
         )
     }
