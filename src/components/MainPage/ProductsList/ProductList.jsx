@@ -10,31 +10,16 @@ const ProductList = (props) => {
 
     let cardsData = props.data;
     let cards = [];
-    let sortList = props.sortList;
-
-
-    const generateCards = (cardsData) => {
-        let cards = [];
-        for (let i = cardsData.length - 1; i >= 0; i--) {
-            cards.push(<Product img={cardsData[i].img[0]} id={cardsData[i]._id} price={cardsData[i].price} type={cardsData[i].typeSell} description={cardsData[i].description} address={cardsData[i].address}/>)
-        }
-        return cards;
-    };
+    for (let i = cardsData.length - 1; i >= 0; i--) {
+        cards.push(<Product img={cardsData[i].img[0]} id={cardsData[i]._id} price={cardsData[i].price} type={cardsData[i].typeSell} description={cardsData[i].description} address={cardsData[i].address}/>)
+    }
 
     useSelector(() => {
-        if (props.data !== undefined) {
-            if (sortList.apartments || sortList.cottage || sortList.houses || sortList.garages || sortList.land || sortList.commercial || sortList.oneRoom || sortList.twoRooms || sortList.threeRooms || sortList.fourPlusRooms || sortList.rent || sortList.selling || sortList.exchange) {
-                if (props.sortList.apartments === false) {
-                    for (let i = 0; i < cardsData.length; i++) {
-                        if (cardsData[i].apartments === false) {
-                            cardsData = cardsData.delete[i]
-                        }
-                    }
-                }
-
-                cards = generateCards(cardsData);
-            } else {
-                cards = generateCards(cardsData);
+        if (props.readyData.length !== 0) {
+            cards = [];
+            cardsData = props.readyData;
+            for (let i = cardsData.length - 1; i >= 0; i--) {
+                cards.push(<Product img={cardsData[i].img[0]} id={cardsData[i]._id} price={cardsData[i].price} type={cardsData[i].typeSell} description={cardsData[i].description} address={cardsData[i].address}/>)
             }
         }
     });

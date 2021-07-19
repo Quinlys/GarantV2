@@ -22,7 +22,8 @@ class MainPage extends React.Component {
             <div>
                 <CategorySortContainer/>
 
-                <ProductList data={this.props.data} sortList={this.props.sortList}/>
+
+                <ProductList data={this.props.data} sortList={this.props.sortList} readyData={this.props.readyData}/>
             </div>
         )
     }

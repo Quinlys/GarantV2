@@ -15,6 +15,7 @@ const CHANGE_HOUSES = 'CHANGE-HOUSES';
 // const CHANGE_EXCHANGE = 'CHANGE-EXCHANGE';
 
 const CHANGE_SORT_LIST = 'CHANGE-SORT-LIST';
+const CHANGE_READY_DATA = 'CHANGE-READY-DATA';
 
 
 
@@ -34,6 +35,9 @@ let initialState = {
         selling: false,
         exchange: false,
     },
+    readyData: [
+
+    ],
     data:   [
 
     ]
@@ -42,8 +46,14 @@ let initialState = {
 export const userReducer = (state = initialState, action) => {
 
     let stateCopy = {...state};
+
+    debugger;
     
     switch (action.type) {
+        case CHANGE_READY_DATA:
+            stateCopy.readyData = state.readyData;
+            stateCopy.readyData = action.info;
+            return stateCopy;
         case CHANGE_SORT_LIST:
             stateCopy.sortList = state.sortList;
             stateCopy.sortList = action.info;
@@ -57,7 +67,7 @@ export const userReducer = (state = initialState, action) => {
     }
 };
 
-
+export const changeReadyData = (text) => ({type: CHANGE_READY_DATA, info: text});
 export const changeHousesList = (text) => ({type: CHANGE_HOUSES, info: text});
 export const changeSortList = (text) => ({type: CHANGE_SORT_LIST, info: text});
 

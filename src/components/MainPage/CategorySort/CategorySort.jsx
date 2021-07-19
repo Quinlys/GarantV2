@@ -33,7 +33,8 @@ const CategorySort = (props) => {
             document.getElementById('fourRooms').disabled = true;
         }
 
-        props.changeSortList(sortList)
+        props.changeSortList(sortList);
+        props.changeReadyData(sortList, props.data);
     };
 
 
