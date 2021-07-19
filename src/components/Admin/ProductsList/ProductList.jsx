@@ -1,26 +1,36 @@
 import React from 'react'
 import Product from "./Product/Product";
 import './ProductList.css'
+import {useSelector} from "react-redux";
 
 
 const ProductList = (props) => {
 
 
-
+    let cardsData = props.data;
     let cards = [];
-    if (props.data !== undefined) {
-        for (let i = props.data.length - 1; i >= 0; i--) {
-            cards.push(<Product img={props.data[i].img[0]} id={props.data[i]._id} price={props.data[i].price} type={props.data[i].typeSell} description={props.data[i].description} address={props.data[i].address}/>)
-        }
-
+    for (let i = cardsData.length - 1; i >= 0; i--) {
+        cards.push(<Product img={cardsData[i].img[0]} id={cardsData[i]._id} price={cardsData[i].price} type={cardsData[i].typeSell} description={cardsData[i].description} address={cardsData[i].address}/>)
     }
+
+    useSelector(() => {
+        if (props.readyData.length !== 0) {
+            cards = [];
+            cardsData = props.readyData;
+            for (let i = cardsData.length - 1; i >= 0; i--) {
+                cards.push(<Product img={cardsData[i].img[0]} id={cardsData[i]._id} price={cardsData[i].price} type={cardsData[i].typeSell} description={cardsData[i].description} address={cardsData[i].address}/>)
+            }
+        }
+    });
+
+
 
 
 
     return (
         <div className="container cards bg-light">
             <div className="card-group">
-                { cards }
+                { props.readyData.empty ? 'Список пустий' : cards }
             </div>
         </div>
     )

@@ -28,12 +28,10 @@ const ProductList = (props) => {
 
 
 
-
-
     return (
         <div className="container cards bg-light">
             <div className="card-group">
-                { cards }
+                { props.readyData.empty ? 'Список пустий' : cards }
             </div>
         </div>
     )
