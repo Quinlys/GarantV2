@@ -47,7 +47,6 @@ export const userReducer = (state = initialState, action) => {
 
     let stateCopy = {...state};
 
-    debugger;
     
     switch (action.type) {
         case CHANGE_READY_DATA:

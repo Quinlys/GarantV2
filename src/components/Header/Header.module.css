@@ -1,16 +1,25 @@
 
 .hidden {
     display: block;
+
 }
 .mobileIcon {
-    display: none;
+    display: block;
 }
 
 .phoneNumber {
     color: white;
 }
 
+.img {
+    position: absolute;
+    margin-top: 1px;
+}
+
 @media screen and (max-width: 768px) {
+    .img {
+        margin-top: -10px;
+    }
     .mobileIcon {
         display: block;
     }

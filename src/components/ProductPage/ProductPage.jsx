@@ -48,7 +48,9 @@ const ProductPage = (props) => {
                         <h2 className="type"><b>{typeString}</b></h2>
                         <h2 className="price"><b>{props.price}</b></h2>
                         <p className='address'>{props.address}</p>
-                        <Button className='call bg-success border-0 button'>Дзвінок рієлтору</Button>
+                        <a href="tel:+380667826312">
+                            <Button className='call bg-success border-0 button'>Дзвінок рієлтору</Button>
+                        </a>
                     </div>
                 </div>
             </div>

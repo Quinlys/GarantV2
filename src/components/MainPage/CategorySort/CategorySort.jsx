@@ -44,7 +44,7 @@ const CategorySort = (props) => {
         <div className="footer-bs navbar-fixed-bottom">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-4 animated fadeInRight">
+                    <div className="col-md-4 animated fadeInRight"  style={{padding: '0'}}>
                         <div className="custom-control custom-checkbox apartments-control">
                             <input type="checkbox" className="custom-control-input" id="apartmentsControl" onChange={changeSortList}/>
                             <label className="custom-control-label" htmlFor="apartmentsControl">Квартири</label>
